@@ -1,8 +1,9 @@
 import pandas as pd
+import os
+import joblib
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-import joblib
 
 df = pd.read_csv("data/titanic.csv")
 
@@ -18,4 +19,8 @@ model = RandomForestClassifier()
 
 model.fit(X_train,y_train)
 
-joblib.dump(model,"models/model.pkl")
+os.makedirs("models", exist_ok=True)
+
+joblib.dump(model, "models/model.pkl")
+
+print("Model saved successfully!")
