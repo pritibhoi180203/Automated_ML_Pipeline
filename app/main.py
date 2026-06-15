@@ -5,4 +5,4 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Automated ML Pipeline Running Successfully"}
+    return {"message": "Version 2 deployed successfully"}
